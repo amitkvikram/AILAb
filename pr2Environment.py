@@ -59,7 +59,7 @@ print("Current Location w.r.t Bunny "  + "Bunny's state", "  Percept" + "  actio
 
 while(bunny.queryForPercept(environment) == False):
 	if(bunny.state.lastMove == "right" or bunny.state.lastMove == "none"):
-		print(str(bunny.state.currentPosition) + "  " + str(bunny.state.lastMove) + "  " + str(bunny.queryForPercept(environment)) + "  " + "left  " + str(environment.state.currentPosition)
+		print(str(bunny.state.currentPosition) + "  " + str(bunny.state.lastMove) + "  " + str(bunny.queryForPercept(environment)) + "  " + "left  " + str(environment.state.currentPosition))
 		bunny.takeAction("left")
 
 	else:
