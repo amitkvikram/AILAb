@@ -32,7 +32,10 @@ class Vehicle:
 
 	def createTimeStamp(self):
 		self.timeStamp = []
-		
+		lastEntryTime = time[self.vehicleNo, 0]
+		for i in range(0, 5):
+			currentNode = self.vehicleMat[self.vehicleNo, i]
+			entryTime = 
 
 
 
