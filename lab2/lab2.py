@@ -7,25 +7,26 @@ class timeStamp:
 		self.entryTime = entryTime
 
 def loadVehicleData():
-	print "Loading Vehicle Matrix"
+	#print "Loading Vehicle Matrix"
 	return np.load("vehicle", allow_pickle = True)
 
 def loadRoadData():
-	print "Loading Road Matrix"
+	#print "Loading Road Matrix"
 	return np.load("road", allow_pickle = True)
 
 def loadTimeData():
-	print "Loading Time Data"
+	#print "Loading Time Data"
 	return np.load("time", allow_pickle = True)
 
 class Vehicle:
     
-	vehicleMat = loadVehicleData
-	timeMat = loadTimeData
-	roadMat = loadRoadData
+	vehicleMat = loadVehicleData()
+	timeMat = loadTimeData()
+	roadMat = loadRoadData()
 
 	def __init__(self, vehicleNo):
-		slef.vehicleNo = vehicleNo
+		self.vehicleNo = vehicleNo
+		print(vehicleMat)
 
 	def calcSpeed(self, x):
 		return np.exp(.5*x)/(1 + np.exp(0.5*x)) + 15/(1 + np.exp(0.5*x))
@@ -35,10 +36,10 @@ class Vehicle:
 		lastEntryTime = time[self.vehicleNo, 0]
 		for i in range(0, 5):
 			currentNode = self.vehicleMat[self.vehicleNo, i]
-			entryTime = 
+			entryTime =0 
 
 
-
+vehicle = Vehicle(0);
 
 
 
