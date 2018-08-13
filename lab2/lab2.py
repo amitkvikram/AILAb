@@ -35,7 +35,7 @@ class Environment:
 	timeMat = loadTimeData()
 	roadMat = loadRoadData()
     trafiic = np.zeros(vehicleMat.shape)
-    roadList = [[[] for j in range(roadMat.shape[0])] for k in range(roadMat.shape[1])]
+    roadCarList = [[[] for j in range(roadMat.shape[0])] for k in range(roadMat.shape[1])]
     mainList = []
 
 	def __init__(self, vehicleNo):
@@ -54,8 +54,11 @@ class Environment:
             mainList.sort(key = lambda x:x.start_time, reverse = True)
             currObj = mainList.pop()   #Type MainListItem
             currRoadCarList = roadList[currObj.source][currObj.destination]     #Type: RoadItem
+            
+            processCurrentVehicle(vehicleNumber, mainListItem):
+                                        
             #push current Car in current roadList
-            roadList[currObj.source][currObj.destination].append(RoadItem(currObj.vehicle_no,
+            roadCarList[currObj.source][currObj.destination].append(RoadItem(currObj.vehicle_no,
                                                                   currObj.start_time, 
                                                                   currObj.start_time + timeTaken))
             
@@ -72,7 +75,39 @@ class Environment:
                                 currObj.destination,
                                 vehicle[currObj.vehicle_no][output[currObj.vehicle_no][0].astype(np.int) + 1]))
    
-    def processCurrentVehicle():
+    def processCurrentVehicle(mainListItem):
+        timeTaken = 0;   #final value will be equal to time taken to travel current road
+        carAhead = 0;
+        roadLength = road[currObj.source, currObj.destination]
+        startTime = currObj.start_time
+        currRoadCarList = roadList[mainListItem.source][mainListItem.destination]   #Type: RoadItem
+        
+        topInd = len(currRoadCarList)
+        for i in range(len(currRoadCarList)):
+            if(start_time < currRoadCarList[topInd - 1].departure_time):
+                carAhead = carAhead + 1
+                topInd -= 1
+            else:
+                break;
+        
+        lastTime = startTime
+        ind = 0
+        while(tot>0 and length > 0):
+            currTravel = calcSpeed(tot) * (currRoadCarList[ind].departure_time - last_time)
+            if(currTravel >= length):
+                length = length - currTravel
+                timeTaken = timeTaken + currRoadCarList[ind].departure_time - last_time
+                last_time = currRoadCarList[ind].departure_time
+            else:
+                timeTaken = timeTaken + (length/calcSpeed(tot))
+                length = 0
+            carAhead-=1;
+            ind+=1;
+        if(length>0.0):
+            if(vehicle_no == 0):
+                print("Lenght not zero", length)
+        timeTaken += length/calcSpeed(0)
+    return timeTaken
 
 
 
