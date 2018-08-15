@@ -11,7 +11,7 @@ class MainListItem:
         print(self.vehicle_no, self.start_time, self.source, self.destination);
 
 class RoadItem:
-    def __init__(self,departure_time):
+    def __init__(self,departure_time):      
         self.departure_time = departure_time
     def printObject(self):
         print(self.vehicle_no, self.arrival_time, self.departure_time)
