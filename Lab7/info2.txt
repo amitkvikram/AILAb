@@ -1,0 +1,27 @@
+LAB: 07
+
+Problem: 02
+
+Input:input.txt
+**Run: python2 q2.py <input.txt
+
+Group Members:
+    1. Amit Vikram Singh(111601001)
+    2. Kuldeep Singh Bhandari(111601009)
+
+Brief Description:
+    1. First treating goal as the source run a dijkstra and calculate shortest distance between nodes and goal.
+    2. divide distance calculated in step1 by the maximum speed of bus. This will work as Heuristic.
+    3. Run A* algorithm using Heuristic calculated is step2.
+    4. State: State of a node in priorityQueue is a triplet(index, Mode of travelling from parent to currentNode, 
+                budget agent has)
+    5. Process:
+        a. Push Source vertex in priorityQueue.
+        b. pop a state from priorityQueue, until priorityQueue is not empty.
+            i.  if popped state is goal, then break the loop.
+            ii. if popped state is already explored, continue.
+            iii. Traverse thorugh all neighbouring node of current Node and get the nextState.
+            iv. If nextState is not already explored, push it in the priority Queue.
+
+
+

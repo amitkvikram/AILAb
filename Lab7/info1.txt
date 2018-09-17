@@ -1,0 +1,28 @@
+LAB: 07
+
+Problem: 01
+Input: input.txt
+**Run: python2 q1.py <input.txt
+
+Group Members:
+    1. Amit Vikram Singh(111601001)
+    2. Kuldeep Singh Bhandari(111601009)
+
+Brief Description:
+    Idea is to run A* algorithm with Euclidean distance as heuristic.
+    
+    Since Euclidean distance is consistent we have an explored set which contains states which are already explored
+    and hence need not to be explored state.
+
+    Approach is to perform A* search algorithm. Initally we push initial state of agent in priority queue where priority is decided by sum of (g+h)
+    where <g> is the current distance of the coordinate from the source and 
+    <h> is heuristic. And mark the initial state as visited, 
+    then we run a loop which runs until either queue is empty or we have reached goal state. In each iteration of loop, we pop node at front of 
+    priority queue(say it is currState) then we do following: 
+        1. Check if currState is goal state, if it is then break the loop.
+        2. Mark currState as visited
+        2. Iterate through all the states which can be accessed from current state, if a state is valid and not visited 
+            before then push it in the priority queue.
+
+
+
