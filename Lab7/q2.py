@@ -14,7 +14,9 @@ class State:
 		self.nodeIndex = nodeIndex
 		self.mode = mode  #mode by which agent reaches in current state
 		self.budget = budget
-	def __eq__(self, other): return (self.nodeIndex == other.nodeIndex
+	def __eq__(self, other): 
+		print("check")
+		return (self.nodeIndex == other.nodeIndex
 		and self.mode == other.mode and self.budget == other.budget)
 
 	def __hash__(self):
@@ -91,6 +93,7 @@ class Agent:
 		return self.cycleSpeed
 
 	def addInExplored(self, state):
+		print(type(state))
 		self.explored.add(state)
 
 	def isExplored(self, state):

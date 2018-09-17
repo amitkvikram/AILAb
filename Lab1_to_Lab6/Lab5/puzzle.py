@@ -124,7 +124,7 @@ s = set()
 q = Queue()
 n = 3   # defines size  of matrix n*n
 #M = np.array([[3, 1], [2, 4]])
-M = np.array([[3, 1, 2], [4, 5, 8], [6, 7, 9]]) # elements from 1 to n*n
+M = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [14, 15, 13, 16]])# elements from 1 to n*n
 # check if parity of the given matrix is odd
 if(parity(Coordinate(n-1, n-1), M, n) == 1) :
     print("Odd Parity")
@@ -158,7 +158,7 @@ else :
             m = Matrix(copy.copy(envObj.M))
     #        print("flag", flag, "visited", m not in s)
             if(flag and (m not in s)) :
-                q.put(Node(envObj.M.copy(), copy.copy(envObj.coord), action, curr)) 
+                q.put(Node(envObj.M.copy(), copy.copy(envObj.coord), action, copy.copy(curr))) 
                 s.add(m)
     
     print("The path is as follows : \n")
