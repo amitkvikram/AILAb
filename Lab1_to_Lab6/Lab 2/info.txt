@@ -1,0 +1,9 @@
+Group Member :
+
+	1. Kuldeep Singh Bhandari (111601009)
+	2. Amit Vikram Singh (111601001)
+
+Brief Description :
+	
+	--> The idea is to store two informations in a matrix M - first is the arrival time of vehicle and second is the present node at which vehicle is present. In sample file, there are 100 vehicles and each vehicle has 5 nodes. So, matrix M has size 100*2. Now, matrix M will find the vehicle <x> which has least arrival time and then we will find number of vehicle which are ahead of the current vehicle <x>. To find this, we can store the time when vehicle <x> reaches to node <j> for each road (i, j) and check for how many vehicles the start time of vehicle <x> is smaller than the end time of those vehicles. This will give us the count <cnt> of the number of vehicles which are ahead of vehicle <x>. Now, we can find the speed of the vehicle <x> in road (i, j) and hence given distance of road (i, j), we can calculate time for travelling from node <i> to node <j>. We will update the matrix with new arrival time for vehicle <x> equal to <endTime> (which is the time when vehicle <x> reaches node j). We will also update the current road of vehicle <x>. We will store the <endTime> of road (i, j) in the output matrix <out>. <endTime> of road (i, j) is starting time of vehicle <x> for node <j>.For the sample text file, we need to loop through exact 400 times to get the desired result because we only need to make only 100 * (5-1) = 400 changes in the matrix M - column one. The code is commented line-to-line which explains the meaning of each line makes easier to understand code. There is two programs - one is "lab2.py" and other is "lab2_withVaryingSpeed.py". The first program assumes that the speed
+	of a vehicle is fixed when the vehicle enters at a road. The second program also include the change in the speed of current vehicle on a road when number of vehicles ahead of current vehicle on that road changes in the middle of travelling.

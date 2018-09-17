@@ -1,0 +1,13 @@
+Experiment No: 03
+
+Group Members:
+	1. Kuldeep Singh Bhandari(111601009)
+	2. Amit Vikram Singh(111601001)
+
+Description of Solution:
+	Idea is to randomly choose dimension and then keep on taking actions until agent reaches goal. All possible actions are defined in a list and at any step, action is chosen randomy using random.randint() function. After getting current action we check if current action is valid or not. An action is said to be invalid if after performing this action agent goes out of the grid.
+	
+	Once we know that the current action is valid, agent performs current action and then environment updates current location of agent. if after performing an action agent reaches goal then loop is terminated and then user is prompted with a message asking if he/she wants to continue or not. If user wants to continue then similar process is performed again.
+	
+	Possible dimensions are: 1, 2, 3;(chosen randomly)
+	length of grid: Length of grid is given as input by user.
