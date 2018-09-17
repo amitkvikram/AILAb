@@ -1,5 +1,5 @@
-# Name 		: Kuldeep Singh Bhandari
-# Roll No.  : 111601009
+# Name 		: Amit Vikram Singh
+# Roll No.  : 111601001
 # Aim       : To implement Simple Traffic Simulator
 import numpy as np
 import sys

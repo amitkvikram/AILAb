@@ -1,8 +1,9 @@
 	# Name         : Kuldeep Singh Bhandari (111601009)
 #              : Amit Vikram Singh (111601001)
 
+from __future__ import print_function
 import numpy as np
-from queue import Queue
+from Queue import Queue
 import copy
 
 # class <Node> represents a state which possess informations like
@@ -36,7 +37,7 @@ def d(coord, n) :
 def parity(coord, M, n) :
     sum = 0
     for i in range(n*n) :
-        if(M[i//n][i%n] == n*n) : continue
+        # if(M[i//n][i%n] == n*n) : continue
         for j in range(i+1, n*n) :
             sum += I(M[i//n][i%n] > M[j//n][j%n])
     return mod(d(coord, n-1) + sum, 2)
