@@ -2,6 +2,7 @@
 # import numpy as np
 from __future__ import print_function
 from Queue import PriorityQueue
+import copy
 
 class Edge:
 	def __init__(self, destination, wt):
@@ -34,7 +35,7 @@ class Environment:
 		self.goal = goal
 	
 	def initializeGraph(self):
-		self.graph = [GraphNode() for i in range(self.numVertices)]
+		self.graph = [copy.copy(GraphNode()) for i in range(self.numVertices)]
 		
 	def isGoal(self, curr):
 		return self.goal == curr
@@ -58,13 +59,20 @@ envObj.initializeGraph()
 # for i in range(n):
 # 	h = 
 	
+# for i in range(envObj.numEdges):
+# 	print("len i=", len(envObj.graph[0].adjList))
+print("Len graph = ", len(envObj.graph))
 #Take input of edges
-for i in range(envObj.numEdges	):
+for i in range(envObj.numEdges):
 	[a, b, wt] = map(int, raw_input().split())
 	a-=1
 	b-=1
+	print("a,b, wt = ",a, b, wt)
 	envObj.graph[a].adjList.append(Edge(b, wt))
-	# envObj.graph[b].adjList.append(Edge(a, wt))
+	print("len i=", len(envObj.graph[a].adjList))
+	# envObj.graph[b].adjList.append(Edge(a, wt))	
+
+print("len 0=", len(envObj.graph[0].adjList))
 
 destinationNode = None
 pq = PriorityQueue()
@@ -79,7 +87,7 @@ while(not pq.empty()):
 		break
 		
 	envObj.graph[curr.ind].explored = True
-		
+	print("len = ", len(envObj.graph[curr.ind].adjList))
 	for edge in envObj.graph[curr.ind].adjList:
 		if(not envObj.graph[edge.destination].explored):
 			print("push = ", edge.destination)
