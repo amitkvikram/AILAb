@@ -1,0 +1,25 @@
+Lab: 05
+ProblemName: (n2 - 1) puzzle
+ 
+Group Members:
+ 	1: Amit Vikram Singh(111601001)
+ 	2: Kuldeep Singh Bhandari(111601009)
+ 	
+Brief Desription:
+	1. State: Every different configuration of puzzle is considered as different state.
+	2. Goal: We are given initial state and we have to find a path so that we can reach the goal state.
+	3. Goal State: Goal state is the state in which if we traverse board in zig-zag order all element occur in sorted order.
+	4. Intial State: initial state is the initial configuration of board. Since we know that goal state has an even parity, we check the 
+	  		parity of initial state. If parity of initial state is even we proceed further and if it's odd we terminate because 
+	  		goal state can never be reached.
+	4. Strategy: Approach here is to do a breadth first search. Initially we push inital state in queue and mark the initial state as
+		     visited, then we initialize a loop which runs until either queue is empty or we have reache goal state. In each iteration
+		     of loop we pop node at front of queue(say is currState) then we do following: 
+				1. Check if currState is goal state, if it is then break the loop.
+				2. Iterate through all the states which can be accessed from current state, if a state is not visited before then
+				push it in the queue and mark it as visited.
+		
+	5. Visited Set: To avoid the possibility of visitin a state twice we have a set which contains all those state which were pushed
+			in queue at least once. 
+		
+ 	

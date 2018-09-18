@@ -1,0 +1,20 @@
+Lab: 05
+ProblemName: Robot Navigation
+ 
+Group Members:
+ 	1: Amit Vikram Singh(111601001)
+ 	2: Kuldeep Singh Bhandari(111601009)
+ 	
+ 	
+Brief Description: 
+	1. State: state of the agent is the coordinate of block in which agent is at present.
+	2. Goal State: goal state is the coordinate of goal.
+	3. Moves: From current cell we can move left, right, up and down. So if current cell coordinate is (r, c) then possible moves are (r - 1,c),
+		(r+1, c), (r, c+1), (r, c - 1).
+	4. Invalid Moves: a move(or action) is invalid if it leads to a cell which is block or to a cell which is outside of board.
+	5. Approach: approach is to do a bfs. initally we push initial state of agent in queue.and mark the initial state as
+		     visited, then we initialize a loop which runs until either queue is empty or we have reache goal state. In each iteration
+		     of loop we pop node at front of queue(say is currState) then we do following: 
+			1. Check if currState is goal state, if it is then break the loop.
+			2. Iterate through all the states which can be accessed from current state, if a state is valide an not visited 
+			 before then push it in the queue and mark it as visited.

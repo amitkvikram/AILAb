@@ -1,0 +1,16 @@
+LAB: 04
+Program Name: Robot Navigation
+
+Team Members:
+    Amit Vikram Singh(111601001)
+    Kuldeep Singh Bhandari(111601009)
+    
+Brief Description:
+    We have a two dimensional n*n matrix representing current state of board.
+    Agent is initially at starting position. Whenever agent takes an action,
+    function takeAction is called which subsequently calls updateState function
+    of environment. updateState function first checks if action is valid or invalid,
+    if action is valid agent moves to new block accroding to the action taken.
+    Invalid Action: An action is invalid if after performing action block goes
+    out of the board or New block is blocked.
+    

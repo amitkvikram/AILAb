@@ -1,0 +1,17 @@
+LAB: 04
+Program Name: (n 2 − 1)-puzzle
+
+Team Members:
+    Amit Vikram Singh(111601001)
+    Kuldeep Singh Bhandari(111601009)
+    
+Brief Description:
+    We have a two dimensional n*n matrix representing current state of board.
+    Empty block is initially in the position (row: n, column: n). Whenever 
+    agent takes an action, function takeAction is called which subsequently 
+    calls updateState function of environment. updateState function first checks
+    if action is valid or invalid, if action is valid it  swaps values of
+    empty block(n*n) with block it's going to replace and then update current 
+    position of empty block.
+    Invalid Action: An action is invalid if after performing action block goes
+    out of the board.
