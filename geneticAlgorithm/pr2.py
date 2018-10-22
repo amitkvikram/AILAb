@@ -8,7 +8,7 @@ import numpy as np
 from heapq import nlargest
 target = "amitlovesgeneticalgorithm"
 population = []
-poolsize = 10
+poolsize = 5
 numPeople = 2
 numBits = 3
 
@@ -28,23 +28,52 @@ def foundGoal():
 		if((population[i] == target)):
 			return i
 	return -1
-	
-def getRandomString(target):
+
+def intToBinary(num):
+	binary = bin(num)
 	s = ""
-	num = np.random.randint(0, 10)
+	if(binary[0] == '-'):
+		s +="-"
+	
+	temp = binary.split('b')[1]
+
+	for i in range(4 - len(temp)):
+		s+='0'
+
+	s = s+temp
+
+	return s
+
+def binaryToInt(binary):
+	return int(binary, 2)
+
+def isNegative(binary):
+	return binary[0] == '-'
+
+def getPositive(binary):
+	if(isNegative(binary)):
+		return binary[1:]
+	else: return binary
+
+def getRandomNumber():
+	s = ""
+	num = np.random.randint(-10, 11)
 	return num
 	
 def initializePopulation():
-	for i in range(numPeople):	population.append(getRandomString(target))
+	for i in range(numPeople):	population.append(getRandomNumber())
 	
 	
-def mutation(str1):
-	r_ind = np.random.randint(len(str1))
+def mutation(num):
+
+	binary = intToBinary(num)
+	r_ind = np.random.randint(len(binary))
 	r_char = str(np.random.randint(0, 2))
 	
 	sList = list(str1)
 	sList[r_ind] = r_char
-	return ''.join(sList)
+	binary = ''.join(sList)
+	return binaryToInt(binary)
 	
 #Takes two string and returns fittest one
 def selection(stringList):
@@ -66,12 +95,24 @@ def doMutation():
 	return np.random.rand() > 0.5
 
 #One point Crossover	
-def crossOver(str1, str2):
-	ind = np.random.randint(len(str1))
-	offSpring1 = str1[:ind] + str2[ind:]
-	offSpring2 = str2[:ind] + str1[ind:]
-	
-	return offSpring1, offSpring2
+def crossOver(num1, num2):
+	binary1 = intToBinary(num1)
+	binary2 = intToBinary(num2)
+	print("binary1 = ", binary1, binary2)
+	ind = np.random.randint(len(binary1))
+
+	binary1_1 = getPositive(binary1)
+	binary2_1 = getPositive(binary2)
+
+	offSpring1 = binary1_1[:ind] + binary2_1[ind:]
+	offSpring2 = binary2_1[:ind] + binary1_1[ind:]
+	if(isNegative(binary1)):
+		offSpring1 = '-'+offSpring1
+
+	if(isNegative(binary2)):
+		offSpring2 = "-" + offSpring2
+	print(offSpring1, offSpring2)
+	return binaryToInt(offSpring1), binaryToInt(offSpring2)
 	
 def v(s1, s2):
 	p1, p2 = s1, s2
@@ -122,7 +163,8 @@ def geneticAlgorithm():
 	
 
 ##CHECK
-geneticAlgorithm()
+# geneticAlgorithm()
+print(crossOver(-2, -10))
 
 	
 	
