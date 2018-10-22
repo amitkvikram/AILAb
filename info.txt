@@ -1,0 +1,25 @@
+Name: Amit Vikram Singh
+Roll No: 111601001
+
+Run: python2 sub.py <input.txt
+
+Heuristic: 
+	heuristic is the sum of manhattan distance of each cell from its position in final state. Suppose that coordinate of a cell in current state is 
+	(i, j)  and coordinate of same cell in final state is (row, col), then h(i, j) = abs(i - row) + abs(col - j). Heurisitic of configuration is 
+	given by: H = sum(h(i, j))   0<i<n; 0<j<n
+
+Logic: 
+	1. Push starting state in priority Queue.
+	2. Now run a while loop until the priority queue is empty.
+		a. Pop current node from priority queue.
+		b. if state corresponding to current goal is not explored
+			i. If current state is goal then break the loop.
+			ii. get next state by swaping one empty block at a time(there are two empty blocks and we will move both of the one at a time) with adjacent block(taking care that one empty block is not swapped with other emtpy block).
+			iii. if next state is not already explored. Calculate heuristic correcponding to next state and calulate priority = parent.g + 1 + heuristic.
+			iv. Push Next state in priotity queue.
+
+Input: input from a txt file.
+		n
+		matrix
+		x, y     (Coordinate of first empty block)
+		x, y     (Coordinate of second empty block)

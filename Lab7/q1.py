@@ -3,6 +3,7 @@
 from __future__ import print_function
 import math
 from Queue import PriorityQueue
+import copy
 
 #Class for state of node
 class State:
@@ -62,6 +63,7 @@ class Environment:
 		self.goal = goal
 		self.graph = []
 	
+
 	def addNode(self, coord):              #add a node in graph
 		self.graph.append(GraphNode(coord))
 		
@@ -106,6 +108,9 @@ for i in range(n):
 	envObj.graph[i].heuristic=calcEuclideanHeuristic(envObj.graph[i].coord,
 						 envObj.graph[envObj.goal].coord)
 	
+# for i in range(envObj.numEdges):
+# 	print("len i=", len(envObj.graph[0].adjList))
+print("Len graph = ", len(envObj.graph))
 #Take input of edges
 for i in range(envObj.numEdges):
 	[a, b, wt] = map(float, raw_input().split())
