@@ -114,7 +114,7 @@ def crossOver(num1, num2):
 	print(offSpring1, offSpring2)
 	return binaryToInt(offSpring1), binaryToInt(offSpring2)
 	
-def v(s1, s2):
+def v(num1, num2):
 	p1, p2 = s1, s2
 	s1 = bin(s1).split('b')[1]
 	s2 = bin(s2).split('b')[1]

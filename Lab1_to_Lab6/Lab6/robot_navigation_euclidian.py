@@ -2,7 +2,7 @@
 #              : Amit Vikram Singh (111601001)
 
 import numpy as np
-from Queue import PriorityQueue
+from Queue import PriorityQueue   #Python2
 import copy
 import math
 
@@ -106,7 +106,7 @@ class Environment :
     def sumOfSquares(self, curr, goal) :
         return (curr.x - goal.x)*(curr.x-goal.x) + (curr.y - goal.y)*(curr.y-goal.y)
         
-class Agent :
+class Agent:
     
     def takeAction(self, envObj, action, curr) :
         return envObj.updateState(action, curr)
