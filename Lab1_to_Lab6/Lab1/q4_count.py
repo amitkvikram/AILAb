@@ -1,5 +1,5 @@
-# Name 		: Kuldeep Singh Bhandari
-# Roll No.  : 111601009
+# Name 		: Amit Vikram Singh
+# Roll No.  : 111601001
 # Aim       : To find the number of words in a given file
 # Idea     : Initialise begin to be False. Loop through each character in the
             # the file and as you find a character which is not ' ' or '\n' ,

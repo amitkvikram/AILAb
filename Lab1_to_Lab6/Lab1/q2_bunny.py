@@ -1,5 +1,5 @@
-# Name 		: Kuldeep Singh Bhandari
-# Roll No.  : 111601009
+# Name 		: Amit Vikram Singh
+# Roll No.  : 111601001
 # Aim  		: With environment "sea", with agent "bunny", help bunny to reach to the shore
 # Idea      : The idea is that bunny will assume that he is at position 0 and will move
 #             to position 1 and if he is not at shore, he will move to position -1 then

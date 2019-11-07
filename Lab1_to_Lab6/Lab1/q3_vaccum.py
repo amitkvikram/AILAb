@@ -1,5 +1,5 @@
-# Name         : Kuldeep Singh Bhandari
-# Roll No.  : 111601009
+# Name         : Amit Vikram Singh
+# Roll No.  : 111601001
 # Aim        : How robot can collect the dirt
 # Idea      : Robot will assume that it is at position 0 and he will take 
 #             spiral rectangle loop to check in the order : (1, 0), (1, 1) 
